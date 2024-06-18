@@ -82,13 +82,11 @@ def randomPasswordGenerator():
     syms = symbolsVar.get()
 
     if(length <= 0):
-        return messagebox.showerror("Length Erroe" ,"Password must be at least 1 character long.")
+        return messagebox.showerror("Length Error" ,"Password must be at least 1 character long.")
     if(not nums and not chars and not syms):
         return messagebox.showerror("Character Type Error" ,"You must select at least one character type.")
 
     messagebox.showinfo("Password", passwordGenerator(length, charType(nums, chars, syms)))
-
-# randomPasswordGenerator()
 
 page = tk.Tk()
 page.title("Random Password Generator")
@@ -96,7 +94,7 @@ passLength = tk.IntVar()
 lettersVar = tk.BooleanVar()
 numbersVar = tk.BooleanVar()
 symbolsVar = tk.BooleanVar()
-tk.Label(page, text='Password Lenght').grid(row = 0, pady = 5)
+tk.Label(page, text='Password Length').grid(row = 0, pady = 5)
 e1 = tk.Entry(page, textvariable = passLength).grid(row = 0, column = 1)
 tk.Checkbutton(page, text='Letters', variable=lettersVar).grid(row = 1, column = 0, pady = 5)
 tk.Checkbutton(page, text='Numbers', variable=numbersVar).grid(row = 1, column = 1)
